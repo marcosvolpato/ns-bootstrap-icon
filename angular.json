@@ -25,7 +25,12 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "*.svg",
+                "input": "./node_modules/bootstrap-icons/",
+                "output": "./assets/"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -121,6 +126,41 @@
             "production": {
               "devServerTarget": "ns-bootstrap-icon-sample:serve:production"
             }
+          }
+        }
+      }
+    },
+    "ns-bootstrap-icon": {
+      "projectType": "library",
+      "root": "projects/ns-bootstrap-icon",
+      "sourceRoot": "projects/ns-bootstrap-icon/src",
+      "prefix": "ns",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ns-bootstrap-icon/tsconfig.lib.json",
+            "project": "projects/ns-bootstrap-icon/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ns-bootstrap-icon/src/test.ts",
+            "tsConfig": "projects/ns-bootstrap-icon/tsconfig.spec.json",
+            "karmaConfig": "projects/ns-bootstrap-icon/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ns-bootstrap-icon/tsconfig.lib.json",
+              "projects/ns-bootstrap-icon/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

@@ -1,0 +1,13 @@
+{
+  "name": "ns-bootstrap-icon",
+  "license": "MIT",
+  "author": {
+    "name": "Marcos Volpato"
+  },
+  "version": "0.0.1",
+  "repository": "marcosvolpato/ns-bootstrap-icon",
+  "peerDependencies": {
+    "@angular/common": "^8.2.0",
+    "@angular/core": "^8.2.0"
+  }
+}
