@@ -9,9 +9,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build ns-bootstrap-icon && npm run copy:readme && npm run copy:license && npm run copy:assets",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "copy:readme": "cpr README.md dist/ns-bootstrap-icon/README.md --overwrite",
+    "copy:license": "cpr LICENSE dist/ns-bootstrap-icon/LICENSE --overwrite",
+    "copy:assets": "cpr node_modules/bootstrap-icons/bootstrap-icons.svg dist/ns-bootstrap-icon/assets/bootstrap-icons.svg --overwrite"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +28,7 @@
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
     "bootstrap-icons": "^1.0.0-alpha5",
+    "cpr": "^3.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
